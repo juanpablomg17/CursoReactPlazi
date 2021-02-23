@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../assets/styles/Componets/CarouselItem.scss';
 
 import playIcon from '../assets/static/play-icon.png';
 import plusIcon from '../assets/static/plus-icon.png';
 
-const CarouselItem = (props) =>{
+const CarouselItem = ({title,year,contentRating,duration,cover}) =>{
 
-      var [text,useText] = useState(props.holas);
+      
 
 
     return(
         <div className="carousel-item">
-        <img className="carousel-item__img" src="https://images.pexels.com/photos/1427741/pexels-photo-1427741.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""  />
+        <img className="carousel-item__img" src={cover} alt={title}  />
         <div className="carousel-item__details">
           <div>             
             <img className="carousel-item__details--img" src={playIcon}/>
             <img className="carousel-item__details--img" src={plusIcon} alt="Plus Icon"/>
           </div>
-          <p className="carousel-item__details--title">Título descriptivo</p>
-          <p className="carousel-item__details--subtitle">2019 16+ 114 minutos {text}</p>
+          <p className="carousel-item__details--title">{title}</p>
+          <p className="carousel-item__details--subtitle">{`${year} ${contentRating} ${duration}`}</p>
         </div>
       </div>
     );
 }
 
+CarouselItem.propTypes ={
+  cover: PropTypes.string,
+  title: PropTypes.string,
+  year: PropTypes.number,
+  contentRating: PropTypes.string,
+  duration: PropTypes.number
+}
 
 export default CarouselItem;
