@@ -49,6 +49,11 @@ module.exports = {
               },
         ]
     },
+
+    // ESTO SIRVE PARA DECIRLE A WEBPACK QUE VOY A TRABAJR CON RUTAS
+    devServer:{
+        historyApiFallback: true,
+    },
     plugins: [ 
         new HtmlWebPackPlugin({
             template: 'public/index.html',
