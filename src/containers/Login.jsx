@@ -1,8 +1,9 @@
 import React from "react";
-import googleIcon from '../assets/static/google-icon.png';
-import twiterIcon from '../assets/static/twitter-icon.png';
+import { Link } from "react-router-dom";
+import googleIcon from "../assets/static/google-icon.png";
+import twiterIcon from "../assets/static/twitter-icon.png";
 
-import '../assets/styles/Componets/Login.scss';
+import "../assets/styles/Componets/Login.scss";
 const Login = () => {
   return (
     <section className="login">
@@ -29,12 +30,12 @@ const Login = () => {
           </div>
         </section>
         <p className="login__container--register">
-          No tienes ninguna cuenta <a href>Regístrate</a>
+          No tienes ninguna cuenta
+          <Link to="/register">Regístrate</Link>
         </p>
       </section>
     </section>
   );
 };
-
 
 export default Login;
